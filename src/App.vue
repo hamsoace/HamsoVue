@@ -13,6 +13,13 @@
     promoted: isPromoted,
     new: !isSoldOut,
   }">Object Conditional Movie</h2>
+  <h2 v-bind:style="{
+    color: highlightColor,
+    'font-size': headerSize + 'px',
+    padding: '20px',
+  }">Inline Style</h2>
+  <h2 v-bind:style="headerStyleObject">Style Object</h2>
+
 </template>
 
 <script>
@@ -31,6 +38,14 @@ export default {
       status: 'success',
       isPromoted: true,
       isSoldOut: true,
+      highlightColor: 'blue',
+      headerSize: 30,
+      headerStyleObject: {
+        color: 'yellow',
+        fontSize: '25px',
+        padding: '30px',
+
+      }
     }
   }
  
