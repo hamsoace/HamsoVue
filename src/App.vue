@@ -1,6 +1,8 @@
 <template>
   <div>{{greet}} {{name}}</div>
-  <div v-text="career"></div>
+  <div v-html="career"></div>
+  <div v-html="hack"></div>
+
 </template>
 
 <script>
@@ -12,7 +14,8 @@ export default {
     return{
       greet: "Hello",
       name: "HamsoAce",
-      career: "Software Dev",
+      career: "<b>Software Dev</b>",
+      hack: `<a href="github.com/hamsoace" onclick="alert('You have been hacked!')">Win a prize!</a>`,
     }
   }
  
