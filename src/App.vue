@@ -1,16 +1,24 @@
 <template>
-  <h2 v-if="num === 0">The Number is Zero</h2>
-  <h2 v-else-if="num < 0">The Number is Negative</h2>
-  <h2 v-else-if="num > 0">The Number is Positive</h2>
-  <h2 v-else>Not a Number</h2>
+  <h2 v-for="(name, index) in names" :key="name">{{index}} {{name}}</h2>
+  <h2 v-for="name in fullNames" :key="name.first">
+    {{name.first}}{{name.last}}
+    </h2>
 
-  <template v-if="display">
-    <h2>Hamisi</h2>
-    <h2>Software Dev</h2>
-    <h2>Vue</h2>
-  </template>
+    <div v-for="actor in actors" :key="actor.name">
+      <h2>{{actor.name}}</h2>
+      <h3 v-for="movie in actor.movies" :key="movie">
+        {{movie}}
+        </h3>
+    </div>
 
-  <h2 v-show="showElement">Using v-show</h2>
+    <h2 v-for="(value, key, index) in myInfo" :key="value">
+      {{index}} {{key}} {{value}}
+      </h2>
+
+      <template v-for="name in names" :key="name">
+        <h2>{{name}}</h2>
+        <hr/>
+      </template>
   
 </template>
 
@@ -21,9 +29,28 @@ export default {
   name: 'App',
   data(){
     return{
-      num: -10,
-      display: true,
-      showElement: true,
+      names: ['Bruce', 'Clark', 'Diana'],
+      fullNames:[
+        {first: 'Bruce', last: 'Wayne'},
+        {first: 'Clark', last: 'Kent'},
+        {first: 'Diana', last: 'Prince'},
+      ],
+
+      actors: [
+        {
+          name: 'Christian Bale',
+          movies: ['Dark Knight', 'Thor 4'],
+        },
+        {
+          name: 'Di Caprio',
+          movies: ['Titanic', 'Inception'],
+        },
+      ],
+      myInfo: {
+        name: 'Hamisi',
+        career: 'Software Dev',
+        course: 'Vue 3',
+      }
     }
   }
  
