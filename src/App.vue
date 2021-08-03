@@ -2,23 +2,23 @@
   <div>{{greet}} {{name}}</div>
   <div v-html="career"></div>
   <!-- <div v-html="hack"></div> -->
-  <button v-bind:disabled="isDisabled">Bind</button>
+  <button :disabled="isDisabled">Bind</button>
   <h2 class="underline">Underlined Text</h2>
   <h2 class="underline" v-bind:class="status">Status</h2>
-  <h2 v-bind:class="isPromoted && 'promoted'">Promoted Movie</h2>
-  <h2 v-bind:class="isSoldOut ? 'sold-out' : 'new'">Sold Out Movie</h2>
-  <h2 v-bind:class="['new', 'promoted']">Newly Promoted Movie</h2>
-  <h2 v-bind:class="[isPromoted && 'promoted', isSoldOut ? 'sold-out' : 'new']">Array Conditional Movie</h2>
-  <h2 v-bind:class="{
+  <h2 :class="isPromoted && 'promoted'">Promoted Movie</h2>
+  <h2 :class="isSoldOut ? 'sold-out' : 'new'">Sold Out Movie</h2>
+  <h2 :class="['new', 'promoted']">Newly Promoted Movie</h2>
+  <h2 :class="[isPromoted && 'promoted', isSoldOut ? 'sold-out' : 'new']">Array Conditional Movie</h2>
+  <h2 :class="{
     promoted: isPromoted,
     new: !isSoldOut,
   }">Object Conditional Movie</h2>
-  <h2 v-bind:style="{
+  <h2 :style="{
     color: highlightColor,
     'font-size': headerSize + 'px',
     padding: '20px',
   }">Inline Style</h2>
-  <h2 v-bind:style="headerStyleObject">Style Object</h2>
+  <h2 :style="headerStyleObject">Style Object</h2>
 
 </template>
 
