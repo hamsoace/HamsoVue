@@ -1,25 +1,12 @@
 <template>
-  <h2 v-for="(name, index) in names" :key="name">{{index}} {{name}}</h2>
-  <h2 v-for="name in fullNames" :key="name.first">
-    {{name.first}}{{name.last}}
-    </h2>
+  <!-- methods -->
 
-    <div v-for="actor in actors" :key="actor.name">
-      <h2>{{actor.name}}</h2>
-      <h3 v-for="movie in actor.movies" :key="movie">
-        {{movie}}
-        </h3>
-    </div>
+  <h2>{{2+3+5}}</h2>
+  <h2>{{5+10+15}}</h2>
+  <h2>Add method : {{ add(2,3,5) }}</h2>
+  <h2>Add method : {{ add(10,15,5) }}</h2>
+  <h2>Multiply method : {{ multiply(baseValue) }}</h2>
 
-    <h2 v-for="(value, key, index) in myInfo" :key="value">
-      {{index}} {{key}} {{value}}
-      </h2>
-
-      <template v-for="name in names" :key="name">
-        <h2>{{name}}</h2>
-        <hr/>
-      </template>
-  
 </template>
 
 <script>
@@ -29,30 +16,18 @@ export default {
   name: 'App',
   data(){
     return{
-      names: ['Bruce', 'Clark', 'Diana'],
-      fullNames:[
-        {first: 'Bruce', last: 'Wayne'},
-        {first: 'Clark', last: 'Kent'},
-        {first: 'Diana', last: 'Prince'},
-      ],
-
-      actors: [
-        {
-          name: 'Christian Bale',
-          movies: ['Dark Knight', 'Thor 4'],
-        },
-        {
-          name: 'Di Caprio',
-          movies: ['Titanic', 'Inception'],
-        },
-      ],
-      myInfo: {
-        name: 'Hamisi',
-        career: 'Software Dev',
-        course: 'Vue 3',
-      }
+      baseMultiplier: 5,
+      baseValue: 2
     }
-  }
+  },
+  methods: {
+    add(a, b, c){
+      return a+b+c
+    },
+    multiply(num) {
+      return num * this.baseMultiplier
+    }
+  },
  
 }
 </script>
